@@ -5,42 +5,116 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="Y6W-OH-hqX" customClass="ResultViewController" customModule="Test_ZipDac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과 0개" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veo-tm-O0M">
+                                <rect key="frame" x="24" y="68" width="366" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xKS-iU-Dcw">
+                                <rect key="frame" x="0.0" y="111.5" width="414" height="726.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ayy-Xb-2g1">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Veo-tm-O0M" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="42L-xw-Aj7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xKS-iU-Dcw" secondAttribute="bottom" constant="24" id="AgB-mB-ije"/>
+                            <constraint firstItem="xKS-iU-Dcw" firstAttribute="top" secondItem="Veo-tm-O0M" secondAttribute="bottom" constant="24" id="Jx7-jI-k56"/>
+                            <constraint firstItem="xKS-iU-Dcw" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="eDU-Oy-7Mv"/>
+                            <constraint firstItem="Veo-tm-O0M" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="jlY-Cf-1cw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Veo-tm-O0M" secondAttribute="trailing" constant="24" id="ldr-lP-03c"/>
+                            <constraint firstAttribute="trailing" secondItem="xKS-iU-Dcw" secondAttribute="trailing" id="z2D-jq-FDN"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="BpP-nj-BLC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="5zJ-Ba-1ap"/>
+                        <outlet property="collectionView" destination="xKS-iU-Dcw" id="g8v-cm-kHL"/>
+                        <outlet property="resultCountLabel" destination="Veo-tm-O0M" id="BAT-Ga-lf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-494" y="160"/>
+            <point key="canvasLocation" x="-839" y="157"/>
         </scene>
         <!--Result Detail View Controller-->
-        <scene sceneID="Vd9-qu-YZV">
+        <scene sceneID="72Y-Jc-AhO">
             <objects>
-                <viewController id="BpP-nj-BLC" customClass="ResultDetailViewController" customModule="Test_ZipDac" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OwN-fl-966">
+                <viewController storyboardIdentifier="ResultDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rZe-Pk-KQx" customClass="ResultDetailViewController" customModule="Test_ZipDac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KXS-m0-4Ss">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="qZN-SS-ekY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-10-pSr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-VK-UMs">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-zp-1F3">
+                                        <rect key="frame" x="14" y="24" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3fq-7V-dhX"/>
+                                            <constraint firstAttribute="height" constant="50" id="U1t-hr-ip3"/>
+                                        </constraints>
+                                        <state key="normal" image="icoDetailBackButton"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wZM-VK-UMs" firstAttribute="width" secondItem="u2b-10-pSr" secondAttribute="width" id="1uK-qw-UDp"/>
+                                    <constraint firstItem="wZM-VK-UMs" firstAttribute="top" secondItem="u2b-10-pSr" secondAttribute="top" id="47I-JD-fMW"/>
+                                    <constraint firstAttribute="trailing" secondItem="wZM-VK-UMs" secondAttribute="trailing" id="AuE-SK-Xhc"/>
+                                    <constraint firstItem="wZM-VK-UMs" firstAttribute="leading" secondItem="u2b-10-pSr" secondAttribute="leading" id="Pbn-LH-ACz"/>
+                                    <constraint firstItem="wZM-VK-UMs" firstAttribute="height" secondItem="u2b-10-pSr" secondAttribute="height" id="TQQ-h1-85N"/>
+                                    <constraint firstItem="TKT-zp-1F3" firstAttribute="top" secondItem="u2b-10-pSr" secondAttribute="top" constant="24" id="bMF-uD-rax"/>
+                                    <constraint firstAttribute="bottom" secondItem="wZM-VK-UMs" secondAttribute="bottom" id="ncS-sa-MzB"/>
+                                    <constraint firstItem="TKT-zp-1F3" firstAttribute="leading" secondItem="u2b-10-pSr" secondAttribute="leading" constant="14" id="ygy-KH-s6g"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u4F-bx-0pn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u2b-10-pSr" firstAttribute="top" secondItem="u4F-bx-0pn" secondAttribute="top" id="Jhi-gE-pky"/>
+                            <constraint firstItem="u2b-10-pSr" firstAttribute="leading" secondItem="u4F-bx-0pn" secondAttribute="leading" id="Qpj-OD-G0g"/>
+                            <constraint firstAttribute="trailing" secondItem="u2b-10-pSr" secondAttribute="trailing" id="YUX-m2-gkW"/>
+                            <constraint firstItem="u4F-bx-0pn" firstAttribute="bottom" secondItem="u2b-10-pSr" secondAttribute="bottom" id="hXS-Ys-b0i"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WcQ-yl-EET"/>
+                    <connections>
+                        <outlet property="closeButton" destination="TKT-zp-1F3" id="2Zn-OF-ngl"/>
+                        <outlet property="imageView" destination="wZM-VK-UMs" id="ZZe-7f-6Cg"/>
+                        <outlet property="scrollView" destination="u2b-10-pSr" id="89i-gW-nbs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X2G-6L-tM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvt-Iv-Wmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="159"/>
+            <point key="canvasLocation" x="-167" y="157"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icoDetailBackButton" width="36" height="36"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

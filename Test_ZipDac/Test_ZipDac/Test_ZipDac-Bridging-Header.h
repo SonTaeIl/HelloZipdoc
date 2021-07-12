@@ -5,4 +5,5 @@
 #ifndef Test_ZipDac-Bridging-Header_h
 #define Test_ZipDac-Bridging-Header_h
 
+#import "NotificationPopup.h"
 #endif
