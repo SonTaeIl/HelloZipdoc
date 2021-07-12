@@ -14,6 +14,11 @@
       - Alamofire, URLSession을 사용해도 첫 번째 응답을 가져옴 : JavaScript 응답이 뿌려지기전에 가져옴
       
 
+
 ## 앱 작동 영상
 https://user-images.githubusercontent.com/47170564/125240475-1e810880-e325-11eb-899d-a78a69b7061d.mov
+
+
+## 앱 Zoom 기능 영상
+https://user-images.githubusercontent.com/47170564/125241783-d82ca900-e326-11eb-87d1-5dd247986354.mov
 
