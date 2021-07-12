@@ -43,13 +43,10 @@ class ResultDetailViewController: UIViewController {
         if let imageURL = imageURL {
             imageView.setImage(urlString: imageURL)
             
-            let widthScale = view.bounds.width / imageView.bounds.width
-            let heightScale = view.bounds.height / imageView.bounds.height
-            let minScale = min(widthScale, heightScale)
-        
-            scrollView.minimumZoomScale = minScale
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 1
             scrollView.zoomScale = 1
-            scrollView.maximumZoomScale = 3
+            scrollView.maximumZoomScale = 3.0
         }
     }
 }
